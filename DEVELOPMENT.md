@@ -5,9 +5,9 @@ By installing `make` you can do the following:
 ```sh
 $ make help
 make install
- - Installs address.
+ - Installs dar_etl.
 make install-all
- - Install address, all development and tests dependencies.
+ - Install dar_etl, all development and tests dependencies.
 make test
  - Runs integration tests and unit tests
 make unit-test

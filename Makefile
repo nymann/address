@@ -1,5 +1,5 @@
 TARGET?=local
-COMPONENT?=address
+COMPONENT?=dar_etl
 VERSION:=src/${COMPONENT}/version.py
 
 include make/common.mk
