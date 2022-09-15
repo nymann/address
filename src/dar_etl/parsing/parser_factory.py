@@ -1,4 +1,4 @@
-from enum import Enum
+from collections.abc import Iterable
 from typing import Type
 
 from pydantic import BaseModel
@@ -30,8 +30,13 @@ class ParserFactory:
     }
 
     @classmethod
-    def create(cls, root_key: Root) -> DarParser:
+    def create(cls, root: Root) -> DarParser:
         return DarParser(
-            parsing_type=cls._registry[root_key],
-            root_key=root_key,
+            parsing_type=cls._registry[root],
+            root=root,
         )
+
+    @classmethod
+    def create_all(cls) -> Iterable[DarParser]:
+        for root, parsing_type in cls._registry.items():
+            yield DarParser(parsing_type=parsing_type, root=root)
