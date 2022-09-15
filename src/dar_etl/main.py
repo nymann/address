@@ -15,6 +15,7 @@ def main(data: Path) -> None:
     fp = open(file=data, mode="rb")
     for postal_code in postal_code_parser.parse(file_pointer=fp):
         debug(postal_code)
+    fp.close()
 
 
 if __name__ == "__main__":
