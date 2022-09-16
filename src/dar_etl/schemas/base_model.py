@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import Enum
-from typing import Any, Optional
+from typing import Optional
 
 from pydantic import BaseModel
 from pydantic import Field
@@ -9,68 +9,68 @@ from pydantic import Field
 class Status(Enum):
     """https://danmarksadresser.dk/adressedata/kodelister/livscyklus/"""
 
-    INTERNAL_PREPERATION = "1"
-    PRELIMINARY = "2"
-    APPLICABLE = "3"
-    DISCONTINUED = "4"
-    ARCHIVED = "5"
-    DELETED = "6"
-    NOT_IN_USE = "7"
-    IN_USE = "8"
-    OBSOLETE = "9"
-    EXPIRED = "10"
-    TERMINATED = "11"
+    internal_preperation = "1"
+    preliminary = "2"
+    applicable = "3"
+    discontinued = "4"
+    archived = "5"
+    deleted = "6"
+    not_in_use = "7"
+    in_use = "8"
+    obsolete = "9"
+    expired = "10"
+    terminated = "11"
 
 
 class BusinessProcess(Enum):
     """https://danmarksadresser.dk/adressedata/kodelister/forretningsproces"""
 
-    MASTER_DATA = "0"  # Stamdata
-    ADDRESS_ASSIGNMENT = "1"  # Adresseopgave
-    DIALOG_CLIENT = "2"  # Dialogklient
-    STREET_POSTCODE = "3"  # Gadepostnummer
-    SUPPLEMENTARY_CITY_NAME = "4"  # Supplerendebynavn
-    ERROR_REPORTING_CLIENT = "5"  # Fejlmeldeklient
-    UNDONE_FORWARD_DATING = "6"  # Fortrudt fremdatering
+    master_data = "0"  # Stamdata
+    address_assignment = "1"  # Adresseopgave
+    dialog_client = "2"  # Dialogklient
+    street_postcode = "3"  # Gadepostnummer
+    supplementary_city_name = "4"  # Supplerendebynavn
+    error_reporting_client = "5"  # Fejlmeldeklient
+    undone_forward_dating = "6"  # Fortrudt fremdatering
 
 
 class BusinessArea(Enum):
-    DAR = "54.15.10.25"  # Danmarks Adresse Register, DAR
-    POSTAL_CODES = "54.15.10.15"  # Postnumre
-    ROAD_NAMES_AND_ROAD_CODES = "54.15.10.06"  # Vejnavne og vejkoder
-    HOUSE_NUMBER = "54.15.10.07"  # Husnummer
-    ADDRESSES = "54.15.10.08"  # Adresser
-    UNKNOWN = "UNKNOWN"
-    UNKNOWN1 = "10.00.00.00"
-    UNKNOWN2 = "00.00.00.00"
+    dar = "54.15.10.25"  # Danmarks Adresse Register, DAR
+    postal_codes = "54.15.10.15"  # Postnumre
+    road_names_and_road_codes = "54.15.10.06"  # Vejnavne og vejkoder
+    house_number = "54.15.10.07"  # Husnummer
+    addresses = "54.15.10.08"  # Adresser
+    unknown = "unknown"
+    unknown1 = "10.00.00.00"
+    unknown2 = "00.00.00.00"
 
     @classmethod
-    def _missing_(cls, _: str) -> Any:
-        return cls(cls.UNKNOWN)
+    def _missing_(cls, _: object) -> Enum:  # noqa: WP526 WPS120
+        return cls(cls.unknown)
 
 
 class BusinessEvent(Enum):
-    NAMED_ROAD = "0"  # Navngivenvej
-    NAMED_ROAD_MUNICIPAL_DISTRICT = "1"  # NavngivenvejKommunedel
-    ADDRESS = "2"  # Adresse
-    HOUSE_NUMBER = "3"  # Husnummer
-    POSTAL_CODE = "4"  # Postnummer
-    SUPPLEMENTARY_CITY_NAME = "5"  # Supplerendebynavn
-    HOUSE_NUMBER_RESERVATION = "6"  # Husnummerreservation
-    ROAD_NAME_RESERVATION = "7"  # VejnavnReservation
-    ADDRESS_ASSIGNMENT = "8"  # Adresseopgave
-    ADDRESS_ASSIGNMENT_ITEM = "9"  # Adresseopgavegenstand
-    DAGI_MUNICIPALITY = "10"  # DAGIKommune
-    DAGI_PARISH_DIVISION = "11"  # DAGISogneinddeling
-    DAGI_POSTAL_CODE = "12"  # DAGIPostnummer
-    DAGI_VOTING_AREA = "13"  # DAGIAfstemningsområde
-    DAGI_PARISH_COUNCIL_VOTING_AREA = "14"  # DAGIMeninghedsrådsafstemningsområde
-    DAGI_SUPPLEMENTARY_CITY_NAME = "15"  # DAGISupplerendeBynavn
-    BBR_BUILDING = "16"  # BBRBygning
-    BBR_TECHNICAL_PLANT = "17"  # BBRTekniskanlæg
-    MU_PIECE_OF_LAND = "18"  # MUJordstykke (matriklens udvidelse)
-    GEO_DANMARK_BUILDING = "19"  # GeoDanmarkBygning
-    GEO_DANMARK_WAYPOINT = "20"  # GeoDanmarkVejmidte
+    named_road = "0"  # Navngivenvej
+    named_road_municipal_district = "1"  # NavngivenvejKommunedel
+    address = "2"  # Adresse
+    house_number = "3"  # Husnummer
+    postal_code = "4"  # Postnummer
+    supplementary_city_name = "5"  # Supplerendebynavn
+    house_number_reservation = "6"  # Husnummerreservation
+    road_name_reservation = "7"  # VejnavnReservation
+    address_assignment = "8"  # Adresseopgave
+    address_assignment_item = "9"  # Adresseopgavegenstand
+    dagi_municipality = "10"  # DAGIKommune
+    dagi_parish_division = "11"  # DAGISogneinddeling
+    dagi_postal_code = "12"  # DAGIPostnummer
+    dagi_voting_area = "13"  # DAGIAfstemningsområde
+    dagi_parish_council_voting_area = "14"  # DAGIMeninghedsrådsafstemningsområde
+    dagi_supplementary_city_name = "15"  # DAGISupplerendeBynavn
+    bbr_building = "16"  # BBRBygning
+    bbr_technical_plant = "17"  # BBRTekniskanlæg
+    mu_piece_of_land = "18"  # MUJordstykke (matriklens udvidelse)
+    geo_danmark_building = "19"  # GeoDanmarkBygning
+    geo_danmark_waypoint = "20"  # GeoDanmarkVejmidte
 
 
 class DarBaseModel(BaseModel):

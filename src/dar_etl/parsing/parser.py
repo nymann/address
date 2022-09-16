@@ -6,7 +6,7 @@ from devtools import debug
 import ijson
 from pydantic import ValidationError
 
-from dar_etl.schemas.address import DarBaseModel
+from dar_etl.schemas.base_model import DarBaseModel
 from dar_etl.schemas.root_keys import Root
 
 

@@ -19,7 +19,7 @@ class NamedRoad(DarBaseModel):
         description="EAID_788F8478_A747_412d_9DE6_FEE0DB4C1BFA",
     )
     road_address_name: Optional[str] = Field(None, description="EAID_9621DD9D_50E3_4426_AB5A_A5E43DED4B05")
-    Street_name: Optional[str] = Field(None, description="EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015")
+    street_name: Optional[str] = Field(None, description="EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015")
     road_name_location_origin_source: Optional[str] = Field(
         None,
         alias="vejnavnebeliggenhed_oprindelse_kilde",

@@ -37,5 +37,10 @@ class ParserFactory:
 
     @classmethod
     def create_all(cls) -> Iterable[DarParser]:
-        for root, parsing_type in cls._registry.items():
-            yield DarParser(parsing_type=parsing_type, root=root)
+        yield from (
+            DarParser(
+                parsing_type=parsing_type,
+                root=root,
+            )
+            for root, parsing_type in cls._registry.items()
+        )

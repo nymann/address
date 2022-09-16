@@ -56,7 +56,7 @@ class HouseNumber(DarBaseModel):
         alias="adgangTilTekniskAnlæg",
         description="EAID_dst79A4C1_23B2_4c0c_85CC_60C6E2EA5AE0",
     )
-    waypoint: Optional[str] = Field(
+    road_midpoint: Optional[str] = Field(
         None,
         alias="vejmidte",
         description="EAID_dstC9842D_CF82_4dc5_8114_3FF7AEF90C17",
