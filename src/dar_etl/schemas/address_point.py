@@ -7,10 +7,6 @@ from dar_etl.schemas.base_model import DarBaseModel
 
 
 class AddressPoint(DarBaseModel):
-    """
-    EAID_00A7AF01_C512_4a85_ADB5_98FB15541948
-    """
-
     origin_source: Optional[str] = Field(
         None,
         alias="oprindelse_kilde",

@@ -6,10 +6,6 @@ from dar_etl.schemas.base_model import DarBaseModel
 
 
 class HouseNumber(DarBaseModel):
-    """
-    EAID_D0A626FC_CCAE_4209_B2F6_AC919B74A528
-    """
-
     access_addresses_designation: Optional[str] = Field(
         None,
         alias="adgangsadressebetegnelse",
@@ -60,42 +56,42 @@ class HouseNumber(DarBaseModel):
         alias="adgangTilTekniskAnlæg",
         description="EAID_dst79A4C1_23B2_4c0c_85CC_60C6E2EA5AE0",
     )
-    vejmidte: Optional[str] = Field(
+    waypoint: Optional[str] = Field(
         None,
         alias="vejmidte",
         description="EAID_dstC9842D_CF82_4dc5_8114_3FF7AEF90C17",
     )
-    afstemningsområde: Optional[str] = Field(
+    voting_area: Optional[str] = Field(
         None,
         alias="afstemningsområde",
         description="EAID_dstB6088D_EE9E_451c_8070_088AA4520FA6",
     )
-    kommuneinddeling: Optional[str] = Field(
+    municipal_division: Optional[str] = Field(
         None,
         alias="kommuneinddeling",
         description="EAID_dst714AB4_FE21_446f_BEE5_7AE65691A45B",
     )
-    menighedsrådsafstemningsområde: Optional[str] = Field(
+    parish_council_voting_area: Optional[str] = Field(
         None,
         alias="menighedsrådsafstemningsområde",
         description="EAID_dst08DF20_7055_4542_8D3D_F8FCCD9A7125",
     )
-    sogneinddeling: Optional[str] = Field(
+    parish_division: Optional[str] = Field(
         None,
         alias="sogneinddeling",
         description="EAID_dst0864F0_E380_4aa6_A644_25974107FC47",
     )
-    supplerende_bynavn: Optional[str] = Field(
+    supplermentary_city_name: Optional[str] = Field(
         None,
         alias="supplerendeBynavn",
         description="EAID_dstF5C960_23DB_454c_A8A8_41B231DF61C7",
     )
-    navngiven_vej: Optional[str] = Field(
+    named_road: Optional[str] = Field(
         None,
         alias="navngivenVej",
         description="EAID_dst74C4B5_0F0F_4a51_B317_BA74938B605F",
     )
-    postnummer: Optional[str] = Field(
+    postal_code: Optional[str] = Field(
         None,
         alias="postnummer",
         description="EAID_dst3F5BA7_EB6C_47a2_AC4B_90C72D4F3585",

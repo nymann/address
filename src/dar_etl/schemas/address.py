@@ -6,10 +6,6 @@ from dar_etl.schemas.base_model import DarBaseModel
 
 
 class Adresse(DarBaseModel):
-    """
-    EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008
-    """
-
     door_designation: Optional[str] = Field(
         None,
         alias="dørbetegnelse",
@@ -34,10 +30,10 @@ class Adresse(DarBaseModel):
     building: Optional[str] = Field(
         None,
         alias="bygning",
-        description="EAID_dst4A2C09_8035_4ca8_8AA0_CBAAB89AF135",
+        description="BBR bygning er relateret til husnummer og ikke til adressen, der er derfor ikke bagvedliggende data for denne parameter, og anvendelsen af parameteren vil ikke give noget resultat.",
     )
     house_number: Optional[str] = Field(
         None,
         alias="husnummer",
-        description="EAID_src6919CB_1734_44ef_BE5B_C115B637B2CD",
+        description="Angiver det DAR husnummer (adgangsadresse), som adressen er tilknyttet. Bruger du dette inputparameteren finder du alle adresser for det pågældende husnummer",
     )

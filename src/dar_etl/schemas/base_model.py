@@ -2,7 +2,6 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Optional
 
-from devtools import debug
 from pydantic import BaseModel
 from pydantic import Field
 
@@ -41,11 +40,12 @@ class BusinessArea(Enum):
     ROAD_NAMES_AND_ROAD_CODES = "54.15.10.06"  # Vejnavne og vejkoder
     HOUSE_NUMBER = "54.15.10.07"  # Husnummer
     ADDRESSES = "54.15.10.08"  # Adresser
-    UNKNOWN1 = "10.00.00.00"
     UNKNOWN = "UNKNOWN"
+    UNKNOWN1 = "10.00.00.00"
+    UNKNOWN2 = "00.00.00.00"
 
     @classmethod
-    def _missing_(cls, business_area: str) -> Any:
+    def _missing_(cls, _: str) -> Any:
         return cls(cls.UNKNOWN)
 
 
