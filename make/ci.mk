@@ -1,4 +1,4 @@
-DOCKER_REPO?=dar_etl
+DOCKER_REPO?=registry.nymann.dev/nymann/dar_etl
 DOCKER_TAG?=${DOCKER_REPO}:$(shell git describe --tag --always | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
 
 package: install-package
