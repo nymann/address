@@ -2,7 +2,7 @@ import logging
 
 from kafka import KafkaProducer
 
-from dar_etl.main import Config
+from dar_etl.config import Config
 from dar_etl.schemas.base_model import DarBaseModel
 
 
