@@ -15,8 +15,8 @@ class DarParser:
         self.root_key: str = root.value
         self.parsing_type = parsing_type
 
-    def parse(self, file_path: Path) -> Iterable[DarBaseModel]:
-        with open(file=file_path, mode="rb") as file_pointer:
+    def parse(self, filepath: Path) -> Iterable[DarBaseModel]:
+        with open(file=filepath, mode="rb") as file_pointer:
             try:
                 yield from self.iterate_json(file_pointer=file_pointer)
             except ijson.IncompleteJSONError:
