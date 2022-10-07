@@ -18,8 +18,6 @@ class DarEtl:
 
     def run(self) -> None:
         for filepath in self.consumer.consume():
-            if filepath.name == "test_20220914235530.zip":
-                continue
             json_file = self._unzip(filepath=filepath)
             for parser in self.parsers:
                 logging.info(f"[PARSING] {parser.root_key} | {json_file.name}")
