@@ -1,4 +1,5 @@
 from io import BufferedReader
+import logging
 from pathlib import Path
 from typing import Iterable, Type
 
@@ -8,7 +9,6 @@ from pydantic import ValidationError
 from dar_etl.schemas.base_model import DarBaseModel
 from dar_etl.schemas.root_keys import Root
 
-import logging
 
 class DarParser:
     def __init__(self, root: Root, parsing_type: Type[DarBaseModel]) -> None:
