@@ -1,5 +1,6 @@
 from datetime import datetime
 from enum import Enum
+import logging
 from typing import Optional
 
 from pydantic import BaseModel
@@ -45,7 +46,8 @@ class BusinessArea(Enum):
     unknown2 = "00.00.00.00"
 
     @classmethod
-    def _missing_(cls, _: object) -> Enum:  # noqa: WP526 WPS120
+    def _missing_(cls, missing: object) -> Enum:  # noqa: WP526 WPS120
+        logging.warning("%s does not have member '%s', assigning 'unknown'.", cls.__qualname__, str(missing))
         return cls(cls.unknown)
 
 
@@ -71,6 +73,14 @@ class BusinessEvent(Enum):
     mu_piece_of_land = "18"  # MUJordstykke (matriklens udvidelse)
     geo_danmark_building = "19"  # GeoDanmarkBygning
     geo_danmark_waypoint = "20"  # GeoDanmarkVejmidte
+    unknown = "unknown"
+
+    @classmethod
+    def _missing_(cls, missing: object) -> Enum:  # noqa: WP526 WPS120
+        if str(missing) == "NavngivenVej":
+            return cls.named_road
+        logging.warning("%s does not have member '%s', assigning 'unknown'.", cls.__qualname__, str(missing))
+        return cls(cls.unknown)
 
 
 class DarBaseModel(BaseModel):
