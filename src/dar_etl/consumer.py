@@ -1,6 +1,5 @@
 import logging
 from pathlib import Path
-import sys
 from typing import Iterable
 
 from confluent_kafka import Consumer
@@ -19,7 +18,7 @@ class NewDarFileNotificationConsumer:
                 "bootstrap.servers": f"{host}:{port}",
                 "group.id": "dar-etl-notification-consumer",
                 "auto.offset.reset": "earliest",
-                "max.poll.interval.ms": sys.maxsize,
+                "max.poll.interval.ms": 86400000,
             },
         )
         self.consumer.subscribe([config.kafka.topic])
