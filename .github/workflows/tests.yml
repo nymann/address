@@ -22,5 +22,5 @@ jobs:
         run: python -m pip install --upgrade pip
       - name: Run Tests
         run: |
-          sudo apt-get install libyajl2
+          sudo apt-get install libyajl-dev
           make test

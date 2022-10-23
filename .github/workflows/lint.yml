@@ -23,5 +23,5 @@ jobs:
           python -m pip install --upgrade pip
       - name: Run Lint
         run: |
-          sudo apt-get install libyajl2
+          sudo apt-get install libyajl-dev
           make lint
