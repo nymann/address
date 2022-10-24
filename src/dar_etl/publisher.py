@@ -48,7 +48,7 @@ class DarEntryPublisher:
     def _message_timestamp(self, dar_model: DarBaseModel) -> int:
         effect_from = dar_model.effect_from
         if effect_from:
-            return int(effect_from.timestamp() * 1000)
+            return max(int(effect_from.timestamp() * 1000), 1)
         return 0
 
     def _on_delivery(self, error: KafkaError, message: Message) -> None:
